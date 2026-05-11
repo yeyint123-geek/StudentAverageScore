@@ -1,11 +1,3 @@
-/******************************************************************************
-
-                            Online Java Compiler.
-                Code, Compile, Run and Debug java program online.
-Write your code in this editor and press "Run" button to execute it.
-
-*******************************************************************************/
-
 import java.util.Scanner;
 
 public class Main {
@@ -13,16 +5,17 @@ public class Main {
         // Create a Scanner object to track input data
         Scanner input = new Scanner(System.in);
     
-        // This array will store 3 test scores entered by user
-        double[] scores = new double[3];
-    
-        // This variable stores the total of all 3 scores
-        double total = 0;
-        
         // Try the program again
         boolean tryAgain = true;
     
         while(tryAgain) {
+            
+            // This array will store 3 test scores entered by user
+            double[] scores = new double[3];
+    
+            // This variable stores the total of all 3 scores
+            double total = 0;
+            
             // This loop will ask the user to enter 3 valid scores
             for (int i = 0; i < scores.length; i++) {
                 boolean validScore = false;
@@ -41,11 +34,11 @@ public class Main {
                             total += score;
                             validScore = true;
                         } else {
-                            System.out.print("Invalid Score!! Please enter a number from 0 to 100.");
+                            System.out.println("Invalid Score!! Please enter a number from 0 to 100.");
                         }
                     }else {
                         //This will check if the user enters text instead of valid number.
-                        System.out.print("Invalid Input!! Please enter a numeric Score.");
+                        System.out.println("Invalid Input!! Please enter a numeric Score.");
                         input.next();
                     }   
                 }
@@ -82,6 +75,7 @@ public class Main {
                     tryAgain = false;
                     System.out.println("Program exited. Thank you!");
                 } else {
+                    // Handling the invalid input instead of Y or N 
                     tryAgain = false;
                     System.out.println("Invalid choice. Program exited.");
                 }
@@ -91,6 +85,4 @@ public class Main {
             input.close();
     }
 }
-
-
 
